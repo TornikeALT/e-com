@@ -1,0 +1,47 @@
+<div class="carousel_wrapper">
+  <img
+    src="/icon-close.svg"
+    alt="close"
+    class="carousel_close_btn"
+    (click)="handleCarouselClose()"
+  />
+  <div class="carousel_image_actions">
+    <div class="previous" (click)="handlePreviousClick()">
+      <img src="/icon-previous.svg" alt="previous" />
+    </div>
+    <img
+      src="/image-product-{{ index }}.jpg"
+      alt="sneakers"
+      class="carousel_main_image"
+    />
+    <div class="next" (click)="handleNextClick()">
+      <img src="/icon-next.svg" alt="next" />
+    </div>
+  </div>
+  <div class="thumnails">
+    <img
+      src="/image-product-1-thumbnail.jpg"
+      alt="shoes thumbnail 1"
+      (click)="handleBtnClick(1)"
+      [ngClass]="{ isActive: index === 1 }"
+    />
+    <img
+      src="/image-product-2-thumbnail.jpg"
+      alt="shoes thumbnail 2"
+      (click)="handleBtnClick(2)"
+      [ngClass]="{ isActive: index === 2 }"
+    />
+    <img
+      src="/image-product-3-thumbnail.jpg"
+      alt="shoes thumbnail 3"
+      (click)="handleBtnClick(3)"
+      [ngClass]="{ isActive: index === 3 }"
+    />
+    <img
+      src="/image-product-4-thumbnail.jpg"
+      alt="shoes thumbnail 4"
+      (click)="handleBtnClick(4)"
+      [ngClass]="{ isActive: index === 4 }"
+    />
+  </div>
+</div>

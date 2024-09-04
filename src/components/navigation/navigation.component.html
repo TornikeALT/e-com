@@ -1,0 +1,53 @@
+<nav class="navigation">
+  <div class="side_nav">
+    <img
+      src="/icon-menu.svg"
+      alt="menu"
+      class="hamburger"
+      (click)="handleNavOpen()"
+    />
+    <a routerLink="/"><img src="/logo.svg" alt="main" /></a>
+  </div>
+  <app-sidenav
+    *ngIf="isSideNavOpen"
+    (closeSideNavigation)="handleNavOpen()"
+  ></app-sidenav>
+  <ul>
+    <li>
+      <a routerLink="/"> <img src="/logo.svg" alt="main" /> </a>
+    </li>
+    <li>
+      <a routerLink="/collections">Collections</a>
+    </li>
+    <li>
+      <a routerLink="/men">Men</a>
+    </li>
+    <li>
+      <a routerLink="women">Women</a>
+    </li>
+    <li>
+      <a routerLink="about">About</a>
+    </li>
+    <li>
+      <a routerLink="contact">Contact</a>
+    </li>
+  </ul>
+  <div class="navigation_images">
+    <div class="cart_with_quantity">
+      <span class="cart_badge" *ngIf="totalQuantity !== 0">{{
+        totalQuantity
+      }}</span>
+      <img
+        src="/icon-cart.svg"
+        alt="cart"
+        class="cart"
+        (click)="cart.toggleVisibility()"
+      />
+    </div>
+    <div class="avatar_border">
+      <img src="/image-avatar.png" alt="avatar" class="avatar" />
+    </div>
+    <app-cart #cart />
+    <!--  aqedan vadzlev refs -->
+  </div>
+</nav>

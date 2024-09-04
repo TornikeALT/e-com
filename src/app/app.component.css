@@ -1,0 +1,11 @@
+header {
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+  position: relative;
+  padding: 1rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}

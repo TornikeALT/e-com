@@ -1,0 +1,81 @@
+.carousel_main_image {
+  max-width: 35rem;
+  border-radius: 12px;
+  width: 100%;
+}
+.carousel_image_actions {
+  display: flex;
+  align-items: center;
+}
+.previous,
+.next {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.previous img,
+.next img {
+  transition: 0.3s;
+}
+.previous:hover,
+.next:hover {
+  cursor: pointer;
+}
+.next:hover.next img,
+.previous:hover.previous img {
+  filter: invert(53%) sepia(92%) saturate(1100%) hue-rotate(-15deg);
+}
+
+.thumnails {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.thumnails img {
+  max-width: 100px;
+  border-radius: 6px;
+  transition: 0.3s;
+  border: 2px solid transparent;
+  width: 100%;
+}
+.thumnails img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.previous {
+  margin-right: -2rem;
+  z-index: 10;
+}
+.next {
+  margin-left: -2rem;
+  z-index: 10;
+}
+.carousel_wrapper {
+  position: relative;
+}
+.carousel_close_btn {
+  width: 1.5rem;
+  position: absolute;
+  right: 5%;
+  top: -3rem;
+  transition: 0.3s;
+}
+
+.thumnails img.isActive {
+  border: 2px solid var(--Orange);
+}
+
+.carousel_close_btn:hover {
+  filter: invert(53%) sepia(92%) saturate(1100%) hue-rotate(-15deg);
+  cursor: pointer;
+}
+@media (max-width: 650px) {
+  .carousel_wrapper {
+    margin: 0 12px;
+  }
+}

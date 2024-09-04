@@ -1,0 +1,45 @@
+<div class="cart_wrapper" *ngIf="isVisible">
+  <div class="header">
+    <h2>Cart</h2>
+    <button (click)="toggleVisibility()" class="close_btn">X</button>
+  </div>
+  <p *ngIf="cartDetails === null || cartDetails.length === 0; else elseBlock">
+    Your Cart is empty.
+  </p>
+  <ng-template #elseBlock>
+    <div
+      *ngIf="cartDetails && cartDetails.length > 0"
+      class="cart_details_wrapper"
+    >
+      <img
+        src="/image-product-1-thumbnail.jpg"
+        alt="cart image"
+        class="cart_image"
+      />
+      <div>
+        <span *ngFor="let item of cartDetails" class="price dark_grey">{{
+          item.heading
+        }}</span>
+        <div class="cart_details">
+          <span *ngFor="let item of cartDetails" class="price dark_grey"
+            >$ {{ item.price | number : "1.2-2" }}</span
+          >
+          <span class="dark_grey">x</span>
+          <span *ngFor="let item of cartDetails" class="dark_grey">
+            {{ item.qty }}</span
+          >
+          <span *ngFor="let item of cartDetails" class="total">
+            ${{ item.total | number : "1.2-2" }}</span
+          >
+        </div>
+      </div>
+      <img
+        src="/icon-delete.svg"
+        alt="delete icon"
+        (click)="handleItemRemove(0)"
+        class="remove_icon"
+      />
+    </div>
+    <button class="checkout_btn">Checkout</button>
+  </ng-template>
+</div>

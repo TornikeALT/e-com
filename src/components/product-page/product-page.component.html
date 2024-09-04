@@ -1,0 +1,97 @@
+<div class="container">
+  <div
+    class="carousel_backdrop"
+    *ngIf="showCarousel"
+    (click)="handleCloseCarousel()"
+  >
+    <app-carousel
+      (closeCarousel)="handleCloseCarousel()"
+      [index]="index"
+      (click)="$event.stopPropagation()"
+    />
+  </div>
+  <div class="product_images">
+    <div class="carousel_actions">
+      <div class="previous" (click)="handlePreviousImage()">
+        <img src="/icon-previous.svg" alt="previous" />
+      </div>
+      <div class="main_image" (click)="handleShowCarousel()">
+        <img src="/image-product-{{ index }}.jpg" alt="sneakers" />
+      </div>
+      <div class="next" (click)="handleNextImage()">
+        <img src="/icon-next.svg" alt="next" />
+      </div>
+    </div>
+    <div class="thumnails">
+      <div [ngClass]="{ thumnails_wrapper: index === 1 }">
+        <img
+          src="/image-product-1-thumbnail.jpg"
+          alt="shoes thumbnail 1"
+          (click)="handleBtnClick(1)"
+          [ngClass]="{ isActive: index === 1 }"
+        />
+      </div>
+      <div [ngClass]="{ thumnails_wrapper: index === 2 }">
+        <img
+          src="/image-product-2-thumbnail.jpg"
+          alt="shoes thumbnail 2"
+          (click)="handleBtnClick(2)"
+          [ngClass]="{ isActive: index === 2 }"
+        />
+      </div>
+      <div [ngClass]="{ thumnails_wrapper: index === 3 }">
+        <img
+          src="/image-product-3-thumbnail.jpg"
+          alt="shoes thumbnail 3"
+          (click)="handleBtnClick(3)"
+          [ngClass]="{ isActive: index === 3 }"
+        />
+      </div>
+      <div [ngClass]="{ thumnails_wrapper: index === 4 }">
+        <img
+          src="/image-product-4-thumbnail.jpg"
+          alt="shoes thumbnail 4"
+          (click)="handleBtnClick(4)"
+          [ngClass]="{ isActive: index === 4 }"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="product_desc">
+    <span class="sneaker_company">SNEAKER COMPANY</span>
+    <h2 class="title" #title>Full Limited Edition Sneakers</h2>
+    <p>
+      These low-profile sneakers are your perfect casual wear companion.
+      Featuring a durable rubber outer sole, they`ll withstand everything the
+      weather can offer.
+    </p>
+    <div class="price_wrapper">
+      <div class="price_sale">
+        <span class="price">$ {{ price | number : "1.2-2" }}</span>
+        <span class="sale"> {{ sale }}%</span>
+      </div>
+      <h4 class="discount">${{ discount | number : "1.2-2" }}</h4>
+    </div>
+    <div class="action_btns">
+      <div class="quantity_btn">
+        <img
+          src="/icon-minus.svg"
+          alt="minus"
+          (click)="handleQuantityDecrease()"
+          class="minus"
+        />
+        <span>{{ quantity }}</span>
+        <img
+          src="/icon-plus.svg"
+          alt="plus"
+          (click)="handleQuantityIncrease()"
+          class="plus"
+        />
+      </div>
+      <div class="addtocart_btn" (click)="handeAddToCart()">
+        <img src="/icon-cart.svg" alt="cart" />
+        <h4>Add to cart</h4>
+      </div>
+    </div>
+  </div>
+</div>

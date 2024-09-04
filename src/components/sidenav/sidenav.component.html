@@ -1,0 +1,26 @@
+<nav class="side_nav">
+  <img
+    src="/icon-close.svg"
+    alt="close"
+    (click)="handleNavClose()"
+    class="close"
+  />
+  <ul>
+    <li>
+      <a routerLink="/collections" (click)="handleNavClose()">Collections</a>
+    </li>
+    <li>
+      <a routerLink="/men" (click)="handleNavClose()">Men</a>
+    </li>
+    <li>
+      <a routerLink="women" (click)="handleNavClose()">Women</a>
+    </li>
+    <li>
+      <a routerLink="about" (click)="handleNavClose()">About</a>
+    </li>
+    <li>
+      <a routerLink="contact" (click)="handleNavClose()">Contact</a>
+    </li>
+  </ul>
+  <div class="backdrop"></div>
+</nav>
