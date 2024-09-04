@@ -1,4 +1,4 @@
-this e-commerce product page simple app.
+this is a e-commerce product page simple app.
 You can:
 
 - Open a lightbox gallery by clicking on the large product image
